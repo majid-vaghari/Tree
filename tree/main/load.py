@@ -33,7 +33,7 @@ def load(filename):
                 raise InvalidInputError
             deg_sum += char == '1'
 
-    if (deg_sum / 2) + 1 != size:  # check to see if it's a tree
+    if deg_sum % 2 != 0 or (deg_sum / 2) + 1 != size:  # check to see if it's a tree
         raise InvalidInputError
 
     f.close()

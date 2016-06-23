@@ -21,6 +21,8 @@ def load(filename):
 
     adj = f.read().splitlines()  # read all lines from file
 
+    f.close()
+
     size = len(adj)
     for row in adj:
         if len(row) != size or set(row) != {'0', '1'}:  # check to see if input file is a valid matrix
@@ -35,8 +37,6 @@ def load(filename):
 
     if deg_sum % 2 != 0 or (deg_sum / 2) + 1 != size:  # check to see if it's a tree
         raise InvalidInputError
-
-    f.close()
 
     t = Tree(adj)
     if t.size != len(t.nodes):  # check to see if the graph is connected

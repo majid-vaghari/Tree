@@ -13,7 +13,7 @@ def parse(command):
          r'(?P<n_cmd>type|degree|level|parent|children|siblings|descendant)\s*'),
         ('path', r'\s*(?:p|path)\s+(?P<p_n1>0|[1-9][0-9]{0,10})\s+(?P<p_n2>0|[1-9][0-9]{0,10})\s*'),
         ('save', r'\s*(?:s|save)\s+"(?P<s_f>.+)"(?:\s+(?P<s_m>list|matrix))?\s*'),
-        ('help', r'\s*(?:h|help)(?:\s+(?P<h_cmd>\w+))?\s*'),
+        ('help', r'\s*(?:h|help)(?:\s+(?P<h_cmd>show|node|path|save|help|exit))?\s*'),
         ('exit', r'\s*exit|quit|e|q\s*'),
         ('mismatch', r'.')
     ]
